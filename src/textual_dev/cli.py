@@ -118,6 +118,14 @@ def _pre_run_warnings() -> None:
     help="Take screenshot after DELAY seconds.",
 )
 @click.option(
+    "--screenshot-path",
+    "screenshot_path",
+    type=str,
+    default=None,
+    metavar="PATH",
+    help="Path of file to save screenshot SVG.",
+)
+@click.option(
     "-c",
     "--command",
     "command",
@@ -143,6 +151,7 @@ def _run_app(
     port: int | None,
     press: str | None,
     screenshot: int | None,
+    screenshot_path: str | None,
     extra_args: tuple[str],
     command: bool = False,
     show_return: bool = False,
